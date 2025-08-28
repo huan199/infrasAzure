@@ -4,3 +4,4 @@ terraform.exe
 *.tfstate
 *.tfstate.*
 *.tfplan*
+.fake

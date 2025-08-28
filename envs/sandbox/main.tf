@@ -23,3 +23,30 @@ module "rbac" {
   rg_role_bindings  = var.rg_role_bindings
   depends_on = [ module.resource_group ]
 }
+
+resource "azurerm_service_plan" "serviceplan" {  
+  name                = var.app_config.service_details[0]
+  resource_group_name = azurerm_resource_group.resourcegroup.name
+  location            = azurerm_resource_group.resourcegroup.location
+  os_type             = var.app_config.service_details[2]
+  sku_name            = var.app_config.service_details[1]
+}
+
+
+
+
+resource "azurerm_windows_web_app" "webapp" {
+  name                = var.app_config.webapp_name
+  resource_group_name = azurerm_resource_group.resourcegroup.name
+  location            = azurerm_resource_group.resourcegroup.location
+  service_plan_id     = azurerm_service_plan.serviceplan.id
+  
+  site_config {
+    always_on=false
+     
+    application_stack {
+      current_stack="dotnet"
+      dotnet_version="v8.0"
+    }
+  }  
+}

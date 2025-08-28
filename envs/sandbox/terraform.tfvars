@@ -72,3 +72,10 @@ subscription_id = "57388369-0905-4b81-9ea7-a7ae033d3bff"
 mg_id                    = "Sandbox"
 allowed_locations        = ["southeastasia"]
 block_public_ip_resource = true    # CẤM tạo PIP ở Sandbox
+
+app_config = {
+	resource_group_name = "SandboxRG"
+	location            = "southeastasia"
+	webapp_name         = "webapp7785534"
+	service_details     = ["serviceplan500090", "F1", "Windows"]
+}

@@ -72,3 +72,13 @@ variable "rg_role_bindings" {
   }))
   default = []
 }
+
+variable "app_config" {
+  description = "App configuration object"
+  type = object({
+    resource_group_name = string
+    location           = string
+    service_details    = list(string)
+    webapp_name        = string
+  })
+}
