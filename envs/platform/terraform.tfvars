@@ -187,7 +187,7 @@ appgateway_config = {
   sku_name           = "Standard_v2"
   sku_tier           = "Standard_v2"
   capacity           = 2
-  subnet_id          = "/subscriptions/334b6757-7f3d-4d58-bdc7-416c3799808c/resourceGroups/ConnectivityRG/providers/Microsoft.Network/virtualNetworks/Hub-VNet/subnets/ApplicationGatewaySubnet"
+  subnet_id          = "/subscriptions/334b6757-7f3d-4d58-bdc7-416c3799808c/resourceGroups/ConnectivityRG/providers/Microsoft.Network/virtualNetworks/Hub-VNet/subnets/ApplicationGatewaysubnet"
   public_ip_id       = "/subscriptions/334b6757-7f3d-4d58-bdc7-416c3799808c/resourceGroups/ConnectivityRG/providers/Microsoft.Network/publicIPAddresses/appgateway-ip"
 }
 
