@@ -52,6 +52,17 @@ landingzones = {
                   destination_port_range     = "5432"
                   source_address_prefix      = "*"
                   destination_address_prefix = "0.0.0.0/0" # hoặc IP cụ thể của PostgreSQL
+                },
+                {
+                  name                       = "AllowInbound8080"
+                  direction                  = "Inbound"
+                  priority                   = 230
+                  access                     = "Allow"
+                  protocol                   = "Tcp"
+                  source_port_range          = "*"
+                  destination_port_range     = "8080"
+                  source_address_prefix      = "*"
+                  destination_address_prefix = "*"
                 }
                 ]
             }
@@ -92,6 +103,17 @@ landingzones = {
             destination_port_range     = "1433"
             source_address_prefix      = "*"
             destination_address_prefix = "0.0.0.0/0" # hoặc IP cụ thể của Azure SQL Database
+          },
+          {
+            name                       = "AllowInbound8080"
+            direction                  = "Inbound"
+            priority                   = 230
+            access                     = "Allow"
+            protocol                   = "Tcp"
+            source_port_range          = "*"
+            destination_port_range     = "8080"
+            source_address_prefix      = "*"
+            destination_address_prefix = "*"
           }
         ]
       }
