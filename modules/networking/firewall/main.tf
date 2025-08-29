@@ -10,4 +10,15 @@ resource "azurerm_firewall" "this" {
     subnet_id            = var.firewall_config.subnet_id
     public_ip_address_id = var.firewall_config.public_ip_id
   }
+
+  lifecycle {
+    ignore_changes = [
+      ip_configuration,
+      dns_proxy_enabled,
+      dns_servers,
+      private_ip_ranges,
+      threat_intel_mode
+      # Không liệt kê network_rule_collection, application_rule_collection, nat_rule_collection ở đây!
+    ]
+  }
 }

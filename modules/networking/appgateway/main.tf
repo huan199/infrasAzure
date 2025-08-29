@@ -43,4 +43,16 @@ resource "azurerm_application_gateway" "this" {
     backend_http_settings_name = "default-http-settings"
     priority                   = 100
   }
+
+  lifecycle {
+    ignore_changes = [
+      backend_address_pool,
+      backend_http_settings,
+      frontend_port,
+      http_listener,
+      probe,
+      request_routing_rule
+      # Thêm các thuộc tính khác nếu cần giữ nguyên
+    ]
+  }
 }
